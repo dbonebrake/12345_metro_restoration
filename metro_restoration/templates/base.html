@@ -1,0 +1,49 @@
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}Metro Restoration{% endblock title %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}favicon.ico">
+{% render_block "css" %}
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}base.css" />
+</head>
+<body>
+	{% cms_toolbar %}
+	<div class="head">
+		<div class="contact visible-desktop visible-tablet">
+			<h3>
+				<span class="glyphicon glyphicon-phone"></span>Call Today!<br />(816) 405-5880
+			</h3>
+		</div>
+	</div>
+	<div class="container">
+		<div class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+				  {% show_menu 0 1 100 100 "menu.html" %}
+				</ul>
+			</div>
+		</div>
+		{% block content %} {% endblock content %}
+		<div class="footer">
+			<p>&copy; Metro Restoration {% now "Y" %}</p>
+		</div>
+	</div>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script	src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	{% block scripts %}{% endblock scripts %} 
+	{% render_block "js" %}
+</body>
+</html>
+

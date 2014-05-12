@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+{% block content %}
+     
+<div class="jumbotron feature" style="">
+  <div class="jumbotron">
+    {% placeholder "feature" %}
+    <p><a class="btn btn-lg btn-primary" href="/contact">Request an Estimate</a></p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      {% placeholder "content1" %}
+    </div>
+    <div class="col-md-4">
+      {% placeholder "content2" %}
+    </div>
+    <div class="col-md-4">
+      {% placeholder "content3" %}
+    </div>
+  </div>
+</div>
+{% endblock content %}
+{% block scripts %}
+  <script>
+    (function($) {
+	  $(document).ready(function() {
+	    // Don't load on mobile devices
+	    if ($(window).width() >= 768) {
+			$(".jumbotron.feature").css({
+			  background: "url('{{ STATIC_URL }}smush-roofing.jpg') no-repeat center"
+			});
+		}
+	  });
+	})(jQuery)
+  </script>
+{% endblock scripts %}
