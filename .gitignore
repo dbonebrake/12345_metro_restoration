@@ -21,6 +21,8 @@ var/
 .installed.cfg
 *.egg
 *.env
+*.project
+*.pydevproject
 
 # Installer logs
 pip-log.txt
