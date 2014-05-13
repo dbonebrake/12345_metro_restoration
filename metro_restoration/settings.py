@@ -15,9 +15,9 @@ env.read_env(root('settings.env'))
 
 #=========== settings.env ================
 
-DATABASES = {
-    'default': env.db(), # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-}
+# DATABASES = {
+#     'default': env.db(), # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
+# }
 
 SECRET_KEY = env('SECRET_KEY') # Raises ImproperlyConfigured exception if SECRET_KEY not in os.environ
 
@@ -254,3 +254,12 @@ CMSPLUGIN_CONTACT_FORMS = getattr(project_settings, "CMSPLUGIN_CONTACT_FORMS", (
         ('metro_restoration.forms.CustomContactForm', _('Custom'))
     )
 )
+
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES = {
+    'default': dj_database_url.config()
+}
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
