@@ -4,7 +4,7 @@ Pillow==2.4.0
 South==0.8.4
 dj-database-url==0.3.0
 django-classy-tags==0.5.1
-django-cms==3.0
+django-cms==3.0.1
 django-environ==0.2.1
 django-mptt==0.6.0
 django-recaptcha==1.0
