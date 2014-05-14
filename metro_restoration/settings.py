@@ -214,6 +214,8 @@ INSTALLED_APPS = (
     'reversion',
     'cmsplugin_contact',
     'metro_restoration'
+    'gunicorn',
+    'dj-database-url'
 )
 
 LANGUAGES = (
