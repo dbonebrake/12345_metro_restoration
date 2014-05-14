@@ -36,4 +36,3 @@ recaptcha-client==1.0.6
 six==1.6.1
 static==1.0.2
 virtualenv==1.11.4
-cms==3.0.1

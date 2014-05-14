@@ -13,11 +13,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 root = environ.Path(BASE_DIR)
 env.read_env(root('settings.env'))
 
-#=========== settings.env ================
+# Static asset configuration
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
 
-# DATABASES = {
-#     'default': env.db(), # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-# }
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_PATH, 'static'),
+)
+
+#=========== settings.env ================
 
 SECRET_KEY = env('SECRET_KEY') # Raises ImproperlyConfigured exception if SECRET_KEY not in os.environ
 
@@ -77,14 +82,6 @@ USE_L10N = True
 
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
-
-PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_PATH, 'static'),
-)
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
