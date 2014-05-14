@@ -1,1 +1,1 @@
-web: gunicorn --workers=1 --bind=0.0.0.0:$PORT settings.py
+web: gunicorn metro_restoration.wsgi -b 0.0.0.0:$PORT
