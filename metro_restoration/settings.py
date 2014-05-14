@@ -213,9 +213,8 @@ INSTALLED_APPS = (
     'djangocms_video',
     'reversion',
     'cmsplugin_contact',
-    'metro_restoration'
-    'gunicorn',
-    'dj-database-url'
+    'metro_restoration',
+    'gunicorn'
 )
 
 LANGUAGES = (
