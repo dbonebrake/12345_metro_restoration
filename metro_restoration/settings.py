@@ -186,7 +186,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_PATH, 'metro_restoration', 'templates'),
+    os.path.join(PROJECT_PATH, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -219,7 +219,8 @@ INSTALLED_APPS = (
     'reversion',
     'cmsplugin_contact',
     'metro_restoration',
-    'gunicorn'
+    'gunicorn'#,
+    #'storages'
 )
 
 LANGUAGES = (
