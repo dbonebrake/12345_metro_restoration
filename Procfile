@@ -1,1 +1,1 @@
-web: gunicorn metro_restoration.wsgi -b 0.0.0.0:$PORT
+web: python metro_restoration/manage.py runserver
