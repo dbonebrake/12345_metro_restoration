@@ -1,1 +1,1 @@
-web: python metro_restoration/manage.py runserver
+worker: python metro_restoration/manage.py runserver
