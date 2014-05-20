@@ -1,1 +1,1 @@
-web: gunicorn metro_restoration.wsgi
+web: gunicorn heroku.wsgi
