@@ -218,8 +218,8 @@ INSTALLED_APPS = (
     'djangocms_video',
     'reversion',
     'cmsplugin_contact',
-    'metro_restoration'#,
-    #'gunicorn'#,
+    'metro_restoration',
+    'gunicorn'#,
     #'storages'
 )
 
