@@ -15,7 +15,7 @@ env.read_env(root('settings.env'))
 
 # Static asset configuration
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
@@ -279,3 +279,5 @@ if not DEBUG:
     STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
     STATIC_URL = S3_URL
+else: 
+    STATIC_ROOT = 'staticfiles'
